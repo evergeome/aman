@@ -1,0 +1,13 @@
+body.dark-mode {
+    --body-bg: #212332;
+    --body-clr: #e3e6f3;
+
+    --container-bg-primary: #2a2e3f;
+    --container-bg-secondary: unset;
+    --border: 1px solid #32394e;
+    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+    --primary: #ffc107;
+    --secondary: blueviolet;
+    --ajblue: #114faa;
+}
