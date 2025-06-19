@@ -1,3 +1,8 @@
+{{-- livewire/user/home-component.blade.php --}}
+@section('title',Name() .' | '. Description())
+@section('description',Name() .' | '. Description())
+@section('keywords',Keywords(Name().' '.Description()))
+
 <div>
-    {{-- In work, do what you enjoy. --}}
+    {{ Name() }}
 </div>

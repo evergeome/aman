@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\TerminalController;
+use App\Livewire\User\HomeComponent;
+
+Route::get('/', HomeComponent::class)->name('home');
 
 /** Welcome Page */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 /** Dashboard Page */
 Route::middleware(['auth', 'verified'])->group(function () {
