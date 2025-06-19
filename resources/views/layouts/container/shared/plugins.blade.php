@@ -26,3 +26,4 @@
 <link rel="stylesheet" href="https://unpkg.com/trix@2.0.8/dist/trix.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @endif
+

@@ -4,5 +4,5 @@
 @section('keywords',Keywords(Name().' '.Description()))
 
 <div>
-    {{ Name() }}
+    {{ Name() .' | '. Description() }}
 </div>
