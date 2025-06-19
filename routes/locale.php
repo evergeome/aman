@@ -24,6 +24,7 @@ Route::any('{query}', function ($query) {
         }
     }
     $query = implode('/', $query);
+    $query = trim($query, '/');
     return redirect('/' . Locale() . '/' . $query);
 })->where('query', '.*');
 
