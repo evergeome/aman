@@ -69,7 +69,8 @@ function client_locale(): string
     }
     // Detect country by IP
     $country = defaultLocation();
-    $data = @unserialize(@file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR']));
+    $context = stream_context_create(['http' => ['timeout' => 2]]);
+    $data = @unserialize(@file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $_SERVER['REMOTE_ADDR'], false, $context));
     if (is_array($data) && isset($data['geoplugin_countryCode'])) {
         $countryCode = $data['geoplugin_countryCode'];
         if (in_array($countryCode, Locations())) {

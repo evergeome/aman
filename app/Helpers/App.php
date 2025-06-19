@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Http;
 /** App Env */
 function Name(): string
 {
-    return Lang(env('APP_NAME'));
+    return Lang(env('APP_NAME','Laravel'));
 }
 function Description(): string
 {
-    return Lang(env('APP_DESCR'));
+    return Lang(env('APP_DESCR','Description'));
 }
 function Keywords($string): string
 {
@@ -31,7 +31,7 @@ function Keywords($string): string
 }
 function Author(): string
 {
-    return Lang(env('AUTHOR'));
+    return Lang(env('AUTHOR','Karim'));
 }
 function Aman(): string
 {
@@ -57,7 +57,8 @@ function Contact($get)
     if(has_cache('contact_'.$get)){
         return get_cache('contact_'.$get);
     }
-    $value = Contact::where('get', $get)->first()->value;
+
+    $value = Contact::where('get', $get)->first()?->value ?? '';
     set_cache('contact_'.$get, $value);
     return $value;
 }
@@ -65,6 +66,6 @@ function Contact($get)
 /** Api */
 function Api($route)
 {
-    $response = Http::get($route)->collect();
-    return $response;
+    $response = Http::get($route);
+    return $response->successful() ? $response->collect() : collect();
 }
