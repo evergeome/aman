@@ -1,4 +1,8 @@
-<x-guest-layout>
+@section('title')
+    {{ Name() .' | '. __('auth.login') }}
+@endsection
+
+<x-layout.guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +48,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-layout.guest-layout>

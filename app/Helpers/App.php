@@ -48,7 +48,7 @@ function isAdmin()
 function Subdomain()
 {
     $domain = (explode('.', request()->getHost()));
-    return (count($domain) > 2) ? $domain[0] : false;
+    return (count($domain) > 2) ? $domain[0] : 'main';
 }
 
 /** Contact */
